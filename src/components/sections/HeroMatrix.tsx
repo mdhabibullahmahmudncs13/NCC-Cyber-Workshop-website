@@ -69,10 +69,10 @@ export function HeroMatrix() {
             {/* Main Heading */}
             <div className="space-y-4">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight font-mono">
-                <span className="matrix-text hover:animate-glow transition-all duration-300 cursor-default block animate-typewriter overflow-hidden whitespace-nowrap border-r-2 border-green-400">MASTER</span>
+                <span className="matrix-text hover:animate-glow transition-all duration-300 cursor-default block animate-typewriter overflow-hidden whitespace-nowrap border-r-2 border-green-400">NITER COMPUTER CLUB PRESENTS</span>
                 <br />
                 <span className="glitch matrix-text text-6xl sm:text-7xl lg:text-8xl" data-text="CYBERSECURITY">
-                  NITER COMPUTER CLUB PRESENTS
+                  
                 </span>
                 <br />
                 <span className="text-green-300 hover:text-green-400 transition-colors duration-300 cursor-default">IN_ONE_DAY.exe</span>
