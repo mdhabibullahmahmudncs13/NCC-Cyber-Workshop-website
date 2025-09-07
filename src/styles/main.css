@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: #ffffff;
+  --background: #000510;
+  --cyber-blue: #00d4ff;
+  --cyber-green: #00ff88;
+  --cyber-purple: #8000ff;
+  --cyber-pink: #ff0080;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: linear-gradient(135deg, var(--background) 0%, #051e30 100%);
+  font-family: system-ui, sans-serif;
+}
+
+/* Cyber theme ready */
+.cyber-text {
+  color: var(--cyber-blue);
+  text-shadow: 0 0 10px currentColor;
+}
+
+.cyber-glow {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}

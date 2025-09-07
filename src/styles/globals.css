@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components; 
+@tailwind utilities;
+
+body { 
+  background: #000; 
+  color: #00ff00; 
+  font-family: 'Courier New', monospace;
+}
+
+/* Matrix Theme Colors */
+:root {
+  --matrix-green: #00ff00;
+  --matrix-dark-green: #008000;
+  --matrix-light-green: #00ff41;
+  --matrix-black: #000000;
+  --matrix-dark-gray: #0d1117;
+  --matrix-glow: 0 0 10px #00ff00;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--matrix-green);
+    text-shadow: 0 0 5px var(--matrix-green);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--matrix-green), 0 0 30px var(--matrix-green);
+    text-shadow: 0 0 10px var(--matrix-green), 0 0 20px var(--matrix-green);
+  }
+}
+
+@keyframes matrixGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--matrix-green), 0 0 10px var(--matrix-green), 0 0 15px var(--matrix-green);
+  }
+  50% {
+    box-shadow: 0 0 10px var(--matrix-green), 0 0 20px var(--matrix-green), 0 0 30px var(--matrix-green);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-matrix-glow {
+  animation: matrixGlow 2s ease-in-out infinite;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-fadeInScale {
+  animation: fadeInScale 0.5s ease-out;
+}
+
+.animate-typewriter {
+  animation: typewriter 3s steps(40, end);
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+/* Matrix theme classes */
+.matrix-text {
+  color: var(--matrix-green);
+  text-shadow: 0 0 5px var(--matrix-green);
+  font-family: 'Courier New', monospace;
+}
+
+.matrix-border {
+  border: 1px solid var(--matrix-green);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.matrix-bg {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+.matrix-button {
+  background: rgba(0, 255, 0, 0.1);
+  border: 1px solid var(--matrix-green);
+  color: var(--matrix-green);
+  text-shadow: 0 0 5px var(--matrix-green);
+  transition: all 0.3s ease;
+}
+
+.matrix-button:hover {
+  background: rgba(0, 255, 0, 0.2);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+  transform: scale(1.05);
+}
+
+/* Interactive hover effects */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 255, 0, 0.1), 0 10px 10px -5px rgba(0, 255, 0, 0.04);
+}
+
+.button-interactive {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.button-interactive::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.button-interactive:hover::before {
+  left: 100%;
+}
+
+/* Matrix card styles */
+.matrix-card {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.matrix-card:hover {
+  border-color: var(--matrix-green);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+  transform: translateY(-5px);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Matrix typography */
+.matrix-heading {
+  font-family: 'Courier New', monospace;
+  color: var(--matrix-green);
+  text-shadow: 0 0 10px var(--matrix-green);
+  font-weight: bold;
+}
+
+/* Glitch effect */
+.glitch {
+  position: relative;
+  color: var(--matrix-green);
+  font-size: 2em;
+  letter-spacing: 2px;
+  animation: glitch 2s linear infinite;
+}
+
+@keyframes glitch {
+  2%, 64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+  4%, 60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}
+
+.glitch:before,
+.glitch:after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+}
+
+.glitch:before {
+  animation: glitch 2s linear infinite;
+  color: #ff0000;
+  z-index: -1;
+}
+
+.glitch:after {
+  animation: glitch 2s linear infinite;
+  color: #0000ff;
+  z-index: -2;
+}
