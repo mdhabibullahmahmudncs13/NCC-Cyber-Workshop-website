@@ -362,18 +362,24 @@ export const databaseService = {
 export const storageService = {
   async uploadFile(file: File) {
     try {
-      console.log('Storage service: uploading file', file.name, file.size)
-      console.log('Storage bucket ID:', config.storageBucketId)
+      if (!config.storageBucketId) {
+        throw new Error('Storage bucket ID is not configured')
+      }
+      
+      const fileId = ID.unique()
       const result = await storage.createFile(
         config.storageBucketId,
-        ID.unique(),
+        fileId,
         file
       );
-      console.log('Storage service: file uploaded successfully', result)
+      
       return result;
     } catch (error) {
       console.error('Error uploading file:', error);
-      throw error;
+      if (error instanceof Error) {
+        throw new Error(`Upload failed: ${error.message}`)
+      }
+      throw new Error('Upload failed: Unknown error')
     }
   },
 
@@ -387,18 +393,28 @@ export const storageService = {
   },
 
   getFilePreview(fileId: string) {
-    return storage.getFilePreview(
-      config.storageBucketId,
-      fileId,
-      400,
-      400,
-      'center',
-      100
-    );
+    try {
+      return storage.getFilePreview(
+        config.storageBucketId,
+        fileId,
+        400,
+        400,
+        'center',
+        100
+      );
+    } catch (error) {
+      console.error('Error getting file preview:', error);
+      throw error;
+    }
   },
 
   getFileView(fileId: string) {
-    return storage.getFileView(config.storageBucketId, fileId);
+    try {
+      return storage.getFileView(config.storageBucketId, fileId);
+    } catch (error) {
+      console.error('Error getting file view:', error);
+      throw error;
+    }
   },
 };
 

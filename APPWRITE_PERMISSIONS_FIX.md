@@ -1,105 +1,125 @@
-# 🔧 Quick Fix: Appwrite Permissions Error
+# Appwrite Image Upload Permissions Fix
 
-## Error: "User (role: guests) missing scopes (["account"])"
+## Issue
+Failed to upload images in the instructor management page at `/dashboard/admin/instructors`.
 
-This error occurs when your Appwrite collections have incorrect permissions set up.
+## Root Cause Analysis
+The image upload failure is most likely due to **Appwrite storage bucket permissions** not being properly configured for authenticated users. 
 
-## 🚀 Quick Solution
+## Solution Steps
 
-### Step 1: Go to Appwrite Console
-1. Open [Appwrite Cloud](https://cloud.appwrite.io)
-2. Go to your project: **NCC Cyber Workshop 2025**
-3. Navigate to **Databases** → **ncc_workshop_db**
+### 1. Check Appwrite Storage Bucket Permissions
 
-### Step 2: Fix Each Collection Permissions
+**In your Appwrite Console:**
 
-For **EACH** of these collections:
-- `users`
-- `workshop_registrations` 
-- `instructors`
-- `support_staff`
+1. Navigate to **Storage** → **Buckets**
+2. Select your storage bucket (`68bbafbf001e80d92606`)
+3. Go to **Permissions** tab
+4. Ensure the following permissions are set:
 
-Do the following:
+**Required Permissions:**
+- **Create documents**: `users` (authenticated users can upload files)
+- **Read documents**: `any` (public read access for viewing images)
+- **Update documents**: `users` (authenticated users can update files)
+- **Delete documents**: `users` (authenticated users can delete files)
 
-1. **Click on the collection**
-2. **Go to Settings tab**
-3. **Click on Permissions**
-4. **Clear all existing permissions**
-5. **Add these simple permissions**:
+### 2. Alternative Permission Settings
 
-#### For ALL Collections, set these permissions:
+If you want more granular control:
 
-**Read Permissions:**
-```
-any
-users
-users:*
-```
+**Option A - Admin Only:**
+- **Create**: `role:admin`
+- **Read**: `any`
+- **Update**: `role:admin`  
+- **Delete**: `role:admin`
 
-**Create Permissions:**
-```
-users
-users:*
-```
+**Option B - Authenticated Users:**
+- **Create**: `users`
+- **Read**: `any`
+- **Update**: `users`
+- **Delete**: `users`
 
-**Update Permissions:**
-```
-users
-users:*
-```
+### 3. Verify Environment Variables
 
-**Delete Permissions:**
-```
-users:*
+Ensure these are properly set in `.env.local`:
+
+```bash
+NEXT_PUBLIC_APPWRITE_STORAGE_BUCKET_ID=68bbafbf001e80d92606
+NEXT_PUBLIC_APPWRITE_ENDPOINT=https://fra.cloud.appwrite.io/v1
+NEXT_PUBLIC_APPWRITE_PROJECT_ID=68bb9d7800190636a8b2
 ```
 
-### Step 3: Save and Test
+### 4. Test Upload Functionality
 
-1. **Save permissions** for each collection
-2. **Restart your development server**:
-   ```bash
-   npm run dev
-   ```
-3. **Test user registration** at http://localhost:3000
+After fixing permissions:
 
-## 📝 What These Permissions Mean
+1. **Login as admin** in the application
+2. Navigate to `/dashboard/admin/instructors`
+3. Click "Add Instructor" or edit existing instructor
+4. Try uploading an image using the "Upload Image" button
+5. Check browser console for any error messages
 
-- `any` = Anyone (including non-logged-in users) can read
-- `users` = Any authenticated user can perform the action
-- `users:*` = Any authenticated user with any role can perform the action
+### 5. Common Error Messages and Solutions
 
-## ✅ Expected Result
+**"AppwriteException: Parameter 'file' has to be a File"**
+- Solution: Ensure you're selecting actual image files, not text files
 
-After fixing permissions, you should be able to:
-- ✅ Register new users
-- ✅ Login/logout
-- ✅ View workshop information
-- ✅ Submit registrations
-- ✅ Upload payment screenshots
+**"AppwriteException: Document with the requested ID could not be found"**
+- Solution: Check that storage bucket ID is correct in environment variables
 
-## 🛡️ Production Security
+**"AppwriteException: Invalid permissions"**
+- Solution: Update storage bucket permissions as described above
 
-For production, you can set more restrictive permissions:
+**"Upload failed: Network error"**
+- Solution: Check internet connection and Appwrite service status
 
-**Users Collection:**
-- Read: `users:{user_id}`, `users:*` (users can read their own data + admins read all)
-- Update: `users:{user_id}`, `users:*` (users can update their own data + admins update all)
+### 6. Debugging Steps
 
-**Registrations Collection:**
-- Read: `users:{user_id}`, `users:*`
-- Create: `users`
-- Update: `users:{user_id}`, `users:*`
+If upload still fails:
 
-But for development/testing, the simple permissions above work perfectly!
+1. **Check browser console** for detailed error messages
+2. **Verify authentication**: Ensure user is logged in with admin role
+3. **Test with smaller images**: Try uploading images under 1MB first
+4. **Check file format**: Ensure using supported formats (JPG, PNG, GIF, WebP)
 
-## 🔄 Alternative: Reset and Recreate
+### 7. Storage Bucket Configuration Checklist
 
-If permissions are too messed up:
+✅ **Bucket exists** with ID `68bbafbf001e80d92606`  
+✅ **File size limit** set appropriately (recommended: 10MB max)  
+✅ **Allowed file extensions** include: `jpg, jpeg, png, gif, webp`  
+✅ **Permissions** configured for authenticated users  
+✅ **Antivirus scanning** enabled (if available)  
 
-1. **Delete all collections**
-2. **Follow the `appwrite_setup.md` guide exactly**
-3. **Use the "Alternative Simple Permissions" shown in each section**
+### 8. Expected Behavior After Fix
 
----
+1. **File Upload**: Click "Upload Image" → select file → see preview immediately
+2. **Form Submission**: Image uploads to Appwrite storage → file ID stored in database
+3. **Image Display**: Instructor cards show uploaded images via Appwrite preview URLs
+4. **Error Handling**: Clear error messages for invalid files or upload failures
 
-**Need help?** The permissions fix should resolve the "missing scopes" error immediately! 🎉
+## Testing Verification
+
+```bash
+# Test storage connection
+curl -X GET \
+  'https://fra.cloud.appwrite.io/v1/storage/buckets/68bbafbf001e80d92606/files' \
+  -H 'X-Appwrite-Project: 68bb9d7800190636a8b2'
+```
+
+This should return a list of files if permissions are correct.
+
+## Need Further Help?
+
+If the issue persists after following these steps:
+
+1. **Check Appwrite Console Logs** for detailed error information
+2. **Review browser network tab** to see exact request/response details  
+3. **Verify user authentication** in browser developer tools
+4. **Test with different file types/sizes** to isolate the issue
+
+The upload functionality is now properly implemented with:
+- ✅ File validation (type and size)
+- ✅ Image preview before upload
+- ✅ Progress indicators
+- ✅ Error handling and user feedback
+- ✅ Fallback URL input option
