@@ -63,7 +63,7 @@ export function HeroMatrix() {
             {/* Badge */}
             <div className="inline-flex items-center space-x-2 matrix-bg rounded-full px-4 py-2 text-sm matrix-text font-medium hover:animate-matrix-glow transition-all duration-300 cursor-pointer animate-pulse">
               <Star className="h-4 w-4 animate-spin-slow text-green-400" />
-              <span className="font-mono">[ PREMIUM CYBERSECURITY TRAINING ]</span>
+              <span className="font-mono">[ PREMIUM CYBERSECURITY WORKSHOP ]</span>
             </div>
             
             {/* Main Heading */}
@@ -72,7 +72,7 @@ export function HeroMatrix() {
                 <span className="matrix-text hover:animate-glow transition-all duration-300 cursor-default block animate-typewriter overflow-hidden whitespace-nowrap border-r-2 border-green-400">MASTER</span>
                 <br />
                 <span className="glitch matrix-text text-6xl sm:text-7xl lg:text-8xl" data-text="CYBERSECURITY">
-                  CYBERSECURITY
+                  NITER COMPUTER CLUB PRESENTS
                 </span>
                 <br />
                 <span className="text-green-300 hover:text-green-400 transition-colors duration-300 cursor-default">IN_ONE_DAY.exe</span>
@@ -90,7 +90,7 @@ export function HeroMatrix() {
             <div className="flex items-center space-x-8 text-sm font-mono">
               <div className="flex items-center space-x-2 hover:text-green-400 transition-colors duration-300 cursor-pointer group matrix-border p-2 rounded">
                 <Users className="h-5 w-5 text-green-400 group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-green-300">[500+ ALUMNI]</span>
+                <span className="text-green-300">[15+ EXPERTS]</span>
               </div>
               <div className="flex items-center space-x-2 hover:text-green-400 transition-colors duration-300 cursor-pointer group matrix-border p-2 rounded">
                 <Shield className="h-5 w-5 text-green-400 group-hover:scale-110 transition-transform duration-300" />
@@ -98,7 +98,7 @@ export function HeroMatrix() {
               </div>
               <div className="flex items-center space-x-2 hover:text-green-400 transition-colors duration-300 cursor-pointer group matrix-border p-2 rounded">
                 <Clock className="h-5 w-5 text-green-400 group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-green-300">[9_HOURS]</span>
+                <span className="text-green-300">[7_HOURS]</span>
               </div>
             </div>
 
@@ -112,13 +112,7 @@ export function HeroMatrix() {
                   </Button>
                 </Link>
                 
-                <button
-                  onClick={() => setPlayVideo(!playVideo)}
-                  className="flex items-center space-x-2 matrix-border matrix-text hover:matrix-bg px-8 py-4 text-lg font-semibold font-mono rounded-lg transition-all duration-300 hover:scale-105 group"
-                >
-                  <Play className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                  <span>[WATCH_PREVIEW.mp4]</span>
-                </button>
+             
               </div>
             ) : (
               <div className="space-y-4">
@@ -160,8 +154,8 @@ export function HeroMatrix() {
                   >
                     <MapPin className={`h-6 w-6 text-green-400 mt-1 flex-shrink-0 transition-transform duration-300 ${hoveredCard === 1 ? 'scale-110 animate-bounce' : ''}`} />
                     <div>
-                      <h4 className="font-semibold matrix-text font-mono">Notre Dame College</h4>
-                      <p className="text-green-400 text-sm font-mono">Computer Lab, Motijheel</p>
+                      <h4 className="font-semibold matrix-text font-mono">AD-117</h4>
+                      <p className="text-green-400 text-sm font-mono">Building 2, Niter Campus</p>
                     </div>
                   </div>
                   
