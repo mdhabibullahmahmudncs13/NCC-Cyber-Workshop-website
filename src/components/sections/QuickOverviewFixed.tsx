@@ -102,7 +102,7 @@ export function QuickOverview() {
               💰
             </div>
             <h3 className="text-lg font-semibold mb-2 matrix-text group-hover:animate-glow transition-colors duration-300 font-mono">[COST]</h3>
-            <p className="text-green-400 font-bold text-xl group-hover:text-green-300 transition-colors duration-300 font-mono">FREE</p>
+            <p className="text-green-400 font-bold text-xl group-hover:text-green-300 transition-colors duration-300 font-mono">100 TK</p>
             <p className="text-green-400 text-sm mt-1 group-hover:text-green-300 transition-colors duration-300 font-mono">[LIMITED_SEATS]</p>
           </div>
         </div>
@@ -115,21 +115,21 @@ export function QuickOverview() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center group">
               <div className="text-4xl mb-4 hover:scale-110 transition-transform duration-300 cursor-pointer hover:animate-matrix-glow">💻</div>
-              <h4 className="font-semibold mb-2 matrix-text group-hover:animate-glow transition-colors duration-300 font-mono">[LAPTOP.exe]</h4>
+              <h4 className="font-semibold mb-2 matrix-text group-hover:animate-glow transition-colors duration-300 font-mono">[LAPTOP]</h4>
               <p className="text-green-300/70 text-sm group-hover:text-green-300 transition-colors duration-300 font-mono">
                 Minimum_4GB_RAM && 10GB_free_space.required
               </p>
             </div>
             <div className="text-center group">
               <div className="text-4xl mb-4 hover:scale-110 transition-transform duration-300 cursor-pointer hover:animate-matrix-glow">🧠</div>
-              <h4 className="font-semibold mb-2 matrix-text group-hover:animate-glow transition-colors duration-300 font-mono">[CURIOSITY.dll]</h4>
+              <h4 className="font-semibold mb-2 matrix-text group-hover:animate-glow transition-colors duration-300 font-mono">[CURIOSITY]</h4>
               <p className="text-green-300/70 text-sm group-hover:text-green-300 transition-colors duration-300 font-mono">
                 Open_mind.initialize() && eagerness_to_learn.execute()
               </p>
             </div>
             <div className="text-center group">
               <div className="text-4xl mb-4 hover:scale-110 transition-transform duration-300 cursor-pointer hover:animate-matrix-glow">📝</div>
-              <h4 className="font-semibold mb-2 matrix-text group-hover:animate-glow transition-colors duration-300 font-mono">[NOTEBOOK.txt]</h4>
+              <h4 className="font-semibold mb-2 matrix-text group-hover:animate-glow transition-colors duration-300 font-mono">[NOTEBOOK]</h4>
               <p className="text-green-300/70 text-sm group-hover:text-green-300 transition-colors duration-300 font-mono">
                 Take_notes.during(hands_on_exercises && important_concepts)
               </p>
