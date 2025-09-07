@@ -148,7 +148,7 @@ export function HeroMatrix() {
                     <Calendar className={`h-6 w-6 text-green-400 mt-1 flex-shrink-0 transition-transform duration-300 ${hoveredCard === 0 ? 'scale-110 rotate-12' : ''}`} />
                     <div>
                       <h4 className="font-semibold matrix-text font-mono">September 11, 2025</h4>
-                      <p className="text-green-400 text-sm font-mono">9:00 AM - 6:00 PM</p>
+                      <p className="text-green-400 text-sm font-mono">9:00 AM - 4:00 PM</p>
                     </div>
                   </div>
                   
