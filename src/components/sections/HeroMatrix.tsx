@@ -79,7 +79,7 @@ export function HeroMatrix() {
               </h1>
               
               <p className="text-xl text-green-400 max-w-2xl leading-relaxed hover:text-green-300 transition-colors duration-300 font-mono">
-                {"> Initializing Bangladesh's most comprehensive cybersecurity workshop..."}<br/>
+                {"> Initializing Niter's most comprehensive cybersecurity workshop..."}<br/>
                 {"> Loading cutting-edge techniques from industry experts..."}<br/>
                 {"> Generating professional certificate..."}
                 <span className="animate-blink">_</span>
