@@ -95,9 +95,9 @@ export function QuickOverview() {
                   className="w-20 h-20 object-contain"
                 />
                 </div>
-              <h3 className="text-lg font-semibold mb-2 matrix-text group-hover:animate-glow transition-colors duration-300 font-mono">[DATE]</h3>
-              <p className="text-green-400 group-hover:text-green-300 transition-colors duration-300 font-mono">SEPTEMBER 11, 2025</p>
-              <p className="text-green-400 text-sm mt-1 group-hover:text-green-300 transition-colors duration-300 font-mono">[SATURDAY]</p>
+              <h3 className="text-lg font-semibold mb-2 matrix-text group-hover:animate-glow transition-colors duration-300 font-mono">[Shibly Sadik]</h3>
+              <p className="text-green-400 group-hover:text-green-300 transition-colors duration-300 font-mono">EXPERTISE_Digital Forensics</p>
+              
             </div>
 
             {/* Time Card */}
