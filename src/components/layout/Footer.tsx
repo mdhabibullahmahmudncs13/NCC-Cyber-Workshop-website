@@ -46,7 +46,7 @@ export function Footer() {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="mailto:info@ncc.org"
+                href="mailto:computerclubniter@gmail.com"
                 className="matrix-text hover:animate-glow transition-all duration-300 button-interactive"
               >
                 <Mail className="h-5 w-5" />
@@ -104,8 +104,8 @@ export function Footer() {
               </li>
               <li>
                 <strong className="matrix-text">[EMAIL]:</strong>{' '}
-                <a href="mailto:cyber@ncc.org" className="hover:animate-glow transition-all duration-300 button-interactive">
-                  cyber@ncc.org
+                <a href="mailto:computerclubniter@gmail.com" className="hover:animate-glow transition-all duration-300 button-interactive">
+                  computerclubniter@gmail.com
                 </a>
               </li>
             </ul>
