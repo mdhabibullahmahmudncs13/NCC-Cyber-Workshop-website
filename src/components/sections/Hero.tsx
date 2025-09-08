@@ -58,7 +58,7 @@ export function Hero() {
             {/* Badge */}
             <div className="inline-flex items-center space-x-2 matrix-bg rounded-full px-4 py-2 text-sm matrix-text font-medium hover:animate-matrix-glow transition-all duration-300 cursor-pointer animate-pulse">
               <Star className="h-4 w-4 animate-spin-slow text-green-400" />
-              <span className="font-mono">[ PREMIUM CYBERSECURITY TRAINING ]</span>
+              <span className="font-mono">[ PREMIUM CYBERSECURITY ]</span>
             </div>
             
             {/* Main Heading */}
@@ -143,7 +143,7 @@ export function Hero() {
                     <Calendar className={`h-6 w-6 text-blue-400 mt-1 flex-shrink-0 transition-transform duration-300 ${hoveredCard === 0 ? 'scale-110 rotate-12' : ''}`} />
                     <div>
                       <h4 className="font-semibold text-white hover:text-blue-400 transition-colors duration-300">September 11, 2025</h4>
-                      <p className="text-gray-400 text-sm">9:00 AM - 6:00 PM</p>
+                      <p className="text-gray-400 text-sm">9:00 AM - 4:00 PM</p>
                     </div>
                   </div>
                   
@@ -156,7 +156,7 @@ export function Hero() {
                     <MapPin className={`h-6 w-6 text-green-400 mt-1 flex-shrink-0 transition-transform duration-300 ${hoveredCard === 1 ? 'scale-110 animate-bounce' : ''}`} />
                     <div>
                       <h4 className="font-semibold text-white hover:text-green-400 transition-colors duration-300">Notre Dame College</h4>
-                      <p className="text-gray-400 text-sm">Computer Lab, Motijheel</p>
+                      <p className="text-gray-400 text-sm">AD-117</p>
                     </div>
                   </div>
                   

@@ -63,7 +63,7 @@ export function HeroMatrix() {
             {/* Badge */}
             <div className="inline-flex items-center space-x-2 matrix-bg rounded-full px-4 py-2 text-sm matrix-text font-medium hover:animate-matrix-glow transition-all duration-300 cursor-pointer animate-pulse">
               <Star className="h-4 w-4 animate-spin-slow text-green-400" />
-              <span className="font-mono">[ PREMIUM CYBERSECURITY WORKSHOP ]</span>
+              <span className="font-mono">[ PREMIUM CYBERSECURITY TRAINING ]</span>
             </div>
             
             {/* Main Heading */}
@@ -71,15 +71,13 @@ export function HeroMatrix() {
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight font-mono">
                 <span className="matrix-text hover:animate-glow transition-all duration-300 cursor-default block animate-typewriter overflow-hidden whitespace-nowrap border-r-2 border-green-400">NITER COMPUTER <br /> CLUB PRESENTS</span>
                 <br />
-                <span className="glitch matrix-text text-6xl sm:text-7xl lg:text-8xl" data-text="CYBERSECURITY">
-                  
-                </span>
-                <br />
+                
+                
                 <span className="text-green-300 hover:text-green-400 transition-colors duration-300 cursor-default">IN_ONE_DAY.exe</span>
               </h1>
               
               <p className="text-xl text-green-400 max-w-2xl leading-relaxed hover:text-green-300 transition-colors duration-300 font-mono">
-                {"> Initializing Niter's most comprehensive cybersecurity workshop..."}<br/>
+                {"> Initializing Bangladesh's most comprehensive cybersecurity workshop..."}<br/>
                 {"> Loading cutting-edge techniques from industry experts..."}<br/>
                 {"> Generating professional certificate..."}
                 <span className="animate-blink">_</span>
@@ -101,6 +99,7 @@ export function HeroMatrix() {
                 <span className="text-green-300">[7_HOURS]</span>
               </div>
             </div>
+            
 
             {/* CTA Buttons */}
             {registrationOpen ? (
@@ -112,7 +111,14 @@ export function HeroMatrix() {
                   </Button>
                 </Link>
                 
-             
+                
+                <button
+                  onClick={() => setPlayVideo(!playVideo)}
+                  className="flex items-center space-x-2 matrix-border matrix-text hover:matrix-bg px-8 py-4 text-lg font-semibold font-mono rounded-lg transition-all duration-300 hover:scale-105 group"
+                >
+                  <Play className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                  <span>[WATCH_PREVIEW.mp4]</span>
+                </button>
               </div>
             ) : (
               <div className="space-y-4">
@@ -142,7 +148,7 @@ export function HeroMatrix() {
                     <Calendar className={`h-6 w-6 text-green-400 mt-1 flex-shrink-0 transition-transform duration-300 ${hoveredCard === 0 ? 'scale-110 rotate-12' : ''}`} />
                     <div>
                       <h4 className="font-semibold matrix-text font-mono">September 11, 2025</h4>
-                      <p className="text-green-400 text-sm font-mono">9:00 AM - 4:00 PM</p>
+                      <p className="text-green-400 text-sm font-mono">9:00 AM - 6:00 PM</p>
                     </div>
                   </div>
                   
@@ -155,10 +161,9 @@ export function HeroMatrix() {
                     <MapPin className={`h-6 w-6 text-green-400 mt-1 flex-shrink-0 transition-transform duration-300 ${hoveredCard === 1 ? 'scale-110 animate-bounce' : ''}`} />
                     <div>
                       <h4 className="font-semibold matrix-text font-mono">AD-217</h4>
-                      <p className="text-green-400 text-sm font-mono">Building 2, Niter Campus</p>
+                      <p className="text-green-400 text-sm font-mono">Building-2, Niter Campus</p>
                     </div>
                   </div>
-                  
                   
                   {/* Price */}
                   <div 
@@ -175,7 +180,8 @@ export function HeroMatrix() {
                 </div>
               </div>
             </div>
-              <p className="text-lg text-green-400 max-w-2xl mx-auto font-mono">
+
+            <p className="text-lg text-green-400 max-w-2xl mx-auto font-mono">
               {"> Explore hands-on topics covered in the workshop:"}
             </p>
           <div className="matrix-card p-8 rounded-2xl">
@@ -188,6 +194,7 @@ export function HeroMatrix() {
               <li className="hover:text-green-200 transition-colors duration-300">Memory Recovery</li>
             </ul>
           </div>
+
             {/* Payment Info */}
             {registrationOpen && (
               <div className="matrix-card p-6 hover:animate-matrix-glow transition-all duration-500 hover:scale-105">

@@ -53,7 +53,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
             <div className="w-10 h-10 bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-400/50 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 group-hover:animate-matrix-glow">
-              <img src="https://fra.cloud.appwrite.io/v1/storage/buckets/68bbafbf001e80d92606/files/68bd8dbf002796c3b453/view?project=68bb9d7800190636a8b2&mode=admin" alt="Logo" className="w-18 h-12 object-contain" />
+              <span className="text-green-400 font-bold text-lg">🛡️</span>
             </div>
             <span className="text-xl font-bold matrix-text group-hover:animate-glow transition-all duration-300 font-mono">
               CYBER_WORKSHOP.exe

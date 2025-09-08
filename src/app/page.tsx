@@ -21,11 +21,11 @@ export default function HomePage() {
       <div id="home">
         <HeroMatrix />
       </div>
-      <div id="curriculum">
-        <Curriculum />
-      </div>
       <div id="overview">
         <QuickOverview />
+      </div>
+      <div id="curriculum">
+        <Curriculum />
       </div>
       <div id="instructors">
         <InstructorsMatrix />
