@@ -12,7 +12,6 @@ export function QuickOverview() {
   useEffect(() => {
     setIsClient(true)
   }, [])
-
   const modules = [
     {
       title: "Ethical Hacking",
@@ -90,7 +89,7 @@ export function QuickOverview() {
               onMouseLeave={() => setHoveredCard(null)}
             >
               <div className={`w-16 h-16 bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-400/50 rounded-lg flex items-center justify-center text-green-400 text-2xl font-bold mx-auto mb-4 transition-all duration-500 ${hoveredCard === 0 ? 'animate-bounce scale-110' : ''}`}>
-                📅
+                <img src="https://fra.cloud.appwrite.io/v1/storage/buckets/68bbafbf001e80d92606/files/68bd7156001170fef882/view?project=68bb9d7800190636a8b2&mode=admin" alt="" />
               </div>
               <h3 className="text-lg font-semibold mb-2 matrix-text group-hover:animate-glow transition-colors duration-300 font-mono">[DATE]</h3>
               <p className="text-green-400 group-hover:text-green-300 transition-colors duration-300 font-mono">SEPTEMBER 11, 2025</p>
@@ -329,7 +328,28 @@ export function QuickOverview() {
       </section>
 
       {/* DETAILS.txt Section */}
-      
+      <section className="py-20 px-4 bg-black relative overflow-hidden">
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4 matrix-heading font-mono glitch hover:animate-glow transition-all duration-500 cursor-default" data-text="-DETAILS.txt">
+              -DETAILS.txt
+            </h2>
+            <p className="text-lg text-green-400 max-w-2xl mx-auto font-mono">
+              {"> Explore hands-on topics covered in the workshop:"}
+            </p>
+          </div>
+          <div className="matrix-card p-8 rounded-2xl">
+            <ul className="list-disc list-inside text-green-300 text-xl space-y-4 font-mono">
+              <li className="hover:text-green-200 transition-colors duration-300">Operating System</li>
+              <li className="hover:text-green-200 transition-colors duration-300">Google Hacking</li>
+              <li className="hover:text-green-200 transition-colors duration-300">Phishing Attack</li>
+              <li className="hover:text-green-200 transition-colors duration-300">WIFI Hacking, Bugging, Jamming</li>
+              <li className="hover:text-green-200 transition-colors duration-300">Cracking any ZIP file</li>
+              <li className="hover:text-green-200 transition-colors duration-300">Memory Recovery</li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </>
   )
 }
