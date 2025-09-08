@@ -6,10 +6,17 @@ export function Curriculum() {
   const [hoveredModule, setHoveredModule] = useState<number | null>(null)
   const [selectedModule, setSelectedModule] = useState<number | null>(null)
   const [isClient, setIsClient] = useState(false)
+  const [copiedPhone, setCopiedPhone] = useState(false)
 
   useEffect(() => {
     setIsClient(true)
   }, [])
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText('01784275877')
+    setCopiedPhone(true)
+    setTimeout(() => setCopiedPhone(false), 2000)
+  }
 
   const modules = [
     {
@@ -209,6 +216,40 @@ export function Curriculum() {
           </div>
         </div>
       </div>
+          {/* Registration CTA */}
+        <div className="text-center mt-12">
+          <div className="matrix-card p-8 rounded-2xl relative overflow-hidden hover:animate-glow transition-all duration-500 hover:scale-105 transform">
+            {/* Matrix animated border effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 via-green-400/5 to-green-500/10 animate-pulse"></div>
+            
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold mb-4 hover:scale-105 transition-transform duration-300 matrix-text font-mono">
+                [READY_TO_ENTER_THE_MATRIX?]
+              </h3>
+              <p className="text-green-300/80 mb-6 max-w-2xl mx-auto hover:matrix-text transition-colors duration-300 font-mono">
+                {'>'}JOIN_OUR_HANDS_ON_CYBER_MATRIX_PROTOCOL_AND_GAIN_PRACTICAL_CYBERSECURITY_SKILLS
+                <br />
+                {'>'}THAT_YOU_CAN_APPLY_IN_THE_DIGITAL_BATTLEFIELD_IMMEDIATELY.
+              </p>
+              <button 
+                onClick={copyToClipboard}
+                className="matrix-button px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-110 active:scale-95 button-interactive group mr-4 font-mono"
+              >
+                <span className="flex items-center">
+                  {copiedPhone ? '[✅_COPIED_TO_MATRIX]' : '[📞_COPY_CONTACT_CODE]'}
+                  <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </span>
+              </button>
+              <button className="bg-transparent border-2 border-green-400 text-green-400 px-8 py-3 rounded-lg font-semibold hover:matrix-bg hover:matrix-text transition-all duration-300 hover:scale-110 active:scale-95 group font-mono">
+                <span className="flex items-center">
+                  [LEARN_MORE_PROTOCOLS]
+                  <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      
     </section>
   )
 }
