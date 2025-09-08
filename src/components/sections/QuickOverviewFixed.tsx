@@ -42,8 +42,8 @@ export function QuickOverview() {
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 matrix-heading font-mono glitch hover:animate-glow transition-all duration-500 cursor-default" data-text="WORKSHOP_OVERVIEW.exe">
-              WORKSHOP_OVERVIEW.exe
+            <h2 className="text-4xl font-bold mb-4 matrix-heading font-mono glitch hover:animate-glow transition-all duration-500 cursor-default" data-text="CURRICULUM.exe">
+              CURRICULUM.exe
             </h2>
             <p className="text-xl text-green-400 max-w-3xl mx-auto hover:text-green-300 transition-colors duration-300 font-mono">
               {"> Join us for an intensive one-day cybersecurity workshop designed for beginners and cyber-enthusiasts"}
@@ -137,7 +137,40 @@ export function QuickOverview() {
               </div>
             </div>
           </div>
-
+                  <div className="matrix-card rounded-2xl p-8 hover:animate-matrix-glow transition-all duration-500">
+          <h3 className="text-2xl font-bold text-center mb-8 matrix-heading font-mono">
+            [LEARNING_PROTOCOL.sys]
+          </h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center group">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-400/50 rounded-lg flex items-center justify-center text-green-400 text-2xl font-bold mx-auto mb-4 font-mono group-hover:animate-matrix-glow transition-all duration-300">
+                01
+              </div>
+              <h4 className="font-semibold mb-2 matrix-text font-mono group-hover:animate-glow">[FOUNDATION]</h4>
+              <p className="text-green-400 text-sm font-mono">
+                {"> Build core cybersecurity knowledge and understand fundamental concepts"}
+              </p>
+            </div>
+            <div className="text-center group">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-400/50 rounded-lg flex items-center justify-center text-green-400 text-2xl font-bold mx-auto mb-4 font-mono group-hover:animate-matrix-glow transition-all duration-300">
+                02
+              </div>
+              <h4 className="font-semibold mb-2 matrix-text font-mono group-hover:animate-glow">[PRACTICE]</h4>
+              <p className="text-green-400 text-sm font-mono">
+                {"> Apply techniques in hands-on exercises and real-world scenarios"}
+              </p>
+            </div>
+            <div className="text-center group">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-400/50 rounded-lg flex items-center justify-center text-green-400 text-2xl font-bold mx-auto mb-4 font-mono group-hover:animate-matrix-glow transition-all duration-300">
+                03
+              </div>
+              <h4 className="font-semibold mb-2 matrix-text font-mono group-hover:animate-glow">[MASTERY]</h4>
+              <p className="text-green-400 text-sm font-mono">
+                {"> Demonstrate skills and receive certification of completion"}
+              </p>
+            </div>
+          </div>
+        </div>
           {/* Registration CTA */}
           <div className="text-center mt-12">
             <div className="matrix-card p-8 rounded-2xl relative overflow-hidden hover:animate-glow transition-all duration-500 hover:scale-105 transform">
