@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useAuth } from '@/components/providers/AuthProvider'
 import { useRouter } from 'next/navigation'
 import { databaseService } from '@/lib/appwrite'
-import { downloadEventIDCard } from '@/lib/pdfGenerator'
+import { downloadEventDetailsPDF } from '@/lib/pdfGenerator'
 import { User, Shield, Calendar, CreditCard, CheckCircle, Clock, XCircle, Download, IdCard } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { PaymentForm } from '@/components/forms/PaymentForm'
@@ -115,16 +115,16 @@ export default function DashboardPage() {
     }
 
     if (registrations[0]?.payment_status !== 'verified') {
-      toast.error('Payment must be verified to download Event ID')
+      toast.error('Payment must be verified to download Event Details')
       return
     }
 
     try {
-      downloadEventIDCard(user, registrations[0])
-      toast.success('Event ID downloaded successfully!')
+      downloadEventDetailsPDF(user, registrations[0])
+      toast.success('Event Details downloaded successfully!')
     } catch (error) {
-      console.error('Failed to download Event ID:', error)
-      toast.error('Failed to download Event ID')
+      console.error('Failed to download Event Details:', error)
+      toast.error('Failed to download Event Details')
     }
   }
 
@@ -299,7 +299,7 @@ export default function DashboardPage() {
                 disabled={!isRegistered || registrations[0]?.payment_status !== 'verified'}
               >
                 <IdCard className="h-4 w-4 mr-2" />
-                Download Event ID
+                Download Event Details
               </Button>
               
               {(!isRegistered || registrations[0]?.payment_status !== 'verified') && (

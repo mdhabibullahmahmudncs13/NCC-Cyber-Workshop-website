@@ -221,8 +221,269 @@ export const downloadSummaryReport = (registrationData: RegistrationData[], user
   doc.save(fileName)
 }
 
-// ID Card Generator for Individual Users
-export const generateEventIDCard = (user: any, registration: any) => {
+// Generate Event Details PDF with Matrix Theme
+export function generateEventDetailsPDF(eventData: any): jsPDF {
+  const doc = new jsPDF({
+    orientation: 'portrait',
+    unit: 'mm',
+    format: 'a4',
+    putOnlyUsedFonts: true
+  })
+
+  const pageWidth = doc.internal.pageSize.getWidth()
+  const pageHeight = doc.internal.pageSize.getHeight()
+
+  // Matrix theme colors
+  const cyberBlue = '#00f5ff'
+  const matrixGreen = '#00ff41'
+  const darkBg = '#0a0a0a'
+  const lightGray = '#e0e0e0'
+  const white = '#ffffff'
+
+  // Background
+  doc.setFillColor(darkBg)
+  doc.rect(0, 0, pageWidth, pageHeight, 'F')
+
+  // Header section with matrix styling
+  doc.setFillColor(cyberBlue)
+  doc.rect(0, 0, pageWidth, 30, 'F')
+  
+  // Title
+  doc.setTextColor(darkBg)
+  doc.setFontSize(24)
+  doc.setFont('helvetica', 'bold')
+  doc.text('CYBERSECURITY WORKSHOP', pageWidth / 2, 15, { align: 'center' })
+  
+  doc.setTextColor(darkBg)
+  doc.setFontSize(12)
+  doc.text('EVENT DETAILS & INFORMATION', pageWidth / 2, 23, { align: 'center' })
+
+  // Main content area
+  let yPosition = 45
+
+  // Event Overview Section
+  doc.setFillColor(matrixGreen)
+  doc.rect(10, yPosition - 5, pageWidth - 20, 8, 'F')
+  doc.setTextColor(darkBg)
+  doc.setFontSize(14)
+  doc.setFont('helvetica', 'bold')
+  doc.text('EVENT OVERVIEW', 15, yPosition, { align: 'left' })
+  
+  yPosition += 15
+  doc.setTextColor(white)
+  doc.setFontSize(11)
+  doc.setFont('helvetica', 'normal')
+  
+  const overviewText = [
+    'Join us for an intensive cybersecurity workshop designed to equip participants',
+    'with essential skills in digital security, ethical hacking, and threat detection.',
+    'This comprehensive program covers both theoretical foundations and practical',
+    'hands-on experience in a state-of-the-art learning environment.'
+  ]
+  
+  overviewText.forEach(line => {
+    doc.text(line, 15, yPosition)
+    yPosition += 5
+  })
+
+  yPosition += 10
+
+  // Schedule Section
+  doc.setFillColor(cyberBlue)
+  doc.rect(10, yPosition - 5, pageWidth - 20, 8, 'F')
+  doc.setTextColor(darkBg)
+  doc.setFontSize(14)
+  doc.setFont('helvetica', 'bold')
+  doc.text('WORKSHOP SCHEDULE', 15, yPosition, { align: 'left' })
+  
+  yPosition += 15
+  doc.setTextColor(white)
+  doc.setFontSize(11)
+  doc.setFont('helvetica', 'normal')
+  
+  const scheduleData = [
+    ['Time', 'Activity', 'Description'],
+    ['9:00 AM - 10:30 AM', 'Introduction & Setup', 'Welcome session and environment setup'],
+    ['10:30 AM - 10:45 AM', 'Break', 'Coffee break and networking'],
+    ['10:45 AM - 12:00 PM', 'Security Fundamentals', 'Core cybersecurity concepts'],
+    ['12:00 PM - 1:00 PM', 'Lunch Break', 'Networking lunch'],
+    ['1:00 PM - 2:30 PM', 'Hands-on Labs', 'Practical security exercises'],
+    ['2:30 PM - 2:45 PM', 'Break', 'Short break'],
+    ['2:45 PM - 4:00 PM', 'Advanced Topics', 'Threat detection and response']
+  ]
+
+  // Create schedule table
+  autoTable(doc, {
+    startY: yPosition,
+    head: [scheduleData[0]],
+    body: scheduleData.slice(1),
+    theme: 'grid',
+    styles: {
+      fontSize: 9,
+      textColor: white,
+      fillColor: [20, 20, 20],
+      lineColor: [0, 245, 255],
+      lineWidth: 0.5
+    },
+    headStyles: {
+      fillColor: [0, 255, 65],
+      textColor: [10, 10, 10],
+      fontSize: 10,
+      fontStyle: 'bold'
+    },
+    alternateRowStyles: {
+      fillColor: [30, 30, 30]
+    },
+    margin: { left: 15, right: 15 }
+  })
+
+  yPosition = (doc as any).lastAutoTable.finalY + 15
+
+  // Curriculum Highlights Section
+  doc.setFillColor(matrixGreen)
+  doc.rect(10, yPosition - 5, pageWidth - 20, 8, 'F')
+  doc.setTextColor(darkBg)
+  doc.setFontSize(14)
+  doc.setFont('helvetica', 'bold')
+  doc.text('CURRICULUM HIGHLIGHTS', 15, yPosition, { align: 'left' })
+  
+  yPosition += 15
+  doc.setTextColor(white)
+  doc.setFontSize(11)
+  doc.setFont('helvetica', 'normal')
+  
+  const curriculumItems = [
+    '• Network Security Fundamentals',
+    '• Ethical Hacking Techniques',
+    '• Incident Response Procedures',
+    '• Risk Assessment & Management',
+    '• Cryptography & Data Protection',
+    '• Social Engineering Awareness',
+    '• Penetration Testing Basics',
+    '• Security Tools & Technologies'
+  ]
+  
+  curriculumItems.forEach(item => {
+    doc.setTextColor(matrixGreen)
+    doc.text('●', 15, yPosition)
+    doc.setTextColor(white)
+    doc.text(item.substring(1), 20, yPosition)
+    yPosition += 6
+  })
+
+  yPosition += 10
+
+  // Venue & Requirements Section
+  const sectionWidth = (pageWidth - 30) / 2
+
+  // Venue Information
+  doc.setFillColor(cyberBlue)
+  doc.rect(10, yPosition - 5, sectionWidth, 8, 'F')
+  doc.setTextColor(darkBg)
+  doc.setFontSize(12)
+  doc.setFont('helvetica', 'bold')
+  doc.text('VENUE DETAILS', 15, yPosition, { align: 'left' })
+  
+  let venueY = yPosition + 12
+  doc.setTextColor(white)
+  doc.setFontSize(10)
+  doc.setFont('helvetica', 'normal')
+  
+  const venueInfo = [
+    'CyberSec Training Center',
+    'Tech Innovation Hub',
+    '123 Digital Avenue',
+    'Silicon Valley, CA 94043',
+    '',
+    'Facilities:',
+    '• High-speed Internet',
+    '• Modern Lab Equipment',
+    '• Multimedia Presentation',
+    '• Collaborative Workspaces'
+  ]
+  
+  venueInfo.forEach(line => {
+    doc.text(line, 15, venueY)
+    venueY += 5
+  })
+
+  // Requirements
+  doc.setFillColor(matrixGreen)
+  doc.rect(15 + sectionWidth, yPosition - 5, sectionWidth, 8, 'F')
+  doc.setTextColor(darkBg)
+  doc.setFontSize(12)
+  doc.setFont('helvetica', 'bold')
+  doc.text('REQUIREMENTS', 20 + sectionWidth, yPosition, { align: 'left' })
+  
+  let reqY = yPosition + 12
+  doc.setTextColor(white)
+  doc.setFontSize(10)
+  doc.setFont('helvetica', 'normal')
+  
+  const requirements = [
+    'Prerequisites:',
+    '• Basic computer literacy',
+    '• Interest in cybersecurity',
+    '• No prior experience required',
+    '',
+    'What to bring:',
+    '• Laptop (recommended)',
+    '• Notebook and pen',
+    '• Valid ID for registration',
+    '• Enthusiasm to learn!'
+  ]
+  
+  requirements.forEach(line => {
+    doc.text(line, 20 + sectionWidth, reqY)
+    reqY += 5
+  })
+
+  // Footer section
+  const footerY = pageHeight - 25
+  doc.setFillColor(darkBg)
+  doc.rect(0, footerY - 5, pageWidth, 30, 'F')
+  
+  // Contact information
+  doc.setTextColor(cyberBlue)
+  doc.setFontSize(12)
+  doc.setFont('helvetica', 'bold')
+  doc.text('CONTACT INFORMATION', pageWidth / 2, footerY + 5, { align: 'center' })
+  
+  doc.setTextColor(white)
+  doc.setFontSize(10)
+  doc.setFont('helvetica', 'normal')
+  doc.text('Email: info@cybersecworkshop.com | Phone: (555) 123-4567', pageWidth / 2, footerY + 12, { align: 'center' })
+  doc.text('Website: www.cybersecworkshop.com | Follow us @CyberSecWorkshop', pageWidth / 2, footerY + 18, { align: 'center' })
+
+  // Matrix-style border
+  doc.setDrawColor(cyberBlue)
+  doc.setLineWidth(1)
+  doc.rect(5, 5, pageWidth - 10, pageHeight - 10)
+  
+  doc.setDrawColor(matrixGreen)
+  doc.setLineWidth(0.5)
+  doc.rect(8, 8, pageWidth - 16, pageHeight - 16)
+
+  return doc
+}
+
+// Download Event Details PDF
+export function downloadEventDetailsPDF(user: any, registration: any) {
+  const eventData = {
+    user,
+    registration,
+    eventName: 'Cybersecurity Workshop',
+    date: new Date().toLocaleDateString(),
+    time: '9:00 AM - 4:00 PM'
+  }
+  
+  const doc = generateEventDetailsPDF(eventData)
+  const fileName = `cybersecurity-workshop-details-${new Date().toISOString().split('T')[0]}.pdf`
+  doc.save(fileName)
+}
+
+// Generate Event ID Card (Original function)
+export function generateEventIDCard(user: any, registration: any): jsPDF {
   // Create a landscape ID card (85.6mm x 53.98mm standard credit card size, scaled up for visibility)
   const doc = new jsPDF({
     orientation: 'landscape',
