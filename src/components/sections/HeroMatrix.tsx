@@ -159,6 +159,7 @@ export function HeroMatrix() {
                     </div>
                   </div>
                   
+                  
                   {/* Price */}
                   <div 
                     className="flex items-start space-x-4 p-4 matrix-bg rounded-xl matrix-border hover:animate-matrix-glow transition-all duration-300 cursor-pointer transform hover:scale-105"
@@ -174,7 +175,19 @@ export function HeroMatrix() {
                 </div>
               </div>
             </div>
-
+              <p className="text-lg text-green-400 max-w-2xl mx-auto font-mono">
+              {"> Explore hands-on topics covered in the workshop:"}
+            </p>
+          <div className="matrix-card p-8 rounded-2xl">
+            <ul className="list-disc list-inside text-green-300 text-xl space-y-4 font-mono">
+              <li className="hover:text-green-200 transition-colors duration-300">Operating System</li>
+              <li className="hover:text-green-200 transition-colors duration-300">Google Hacking</li>
+              <li className="hover:text-green-200 transition-colors duration-300">Phishing Attack</li>
+              <li className="hover:text-green-200 transition-colors duration-300">WIFI Hacking, Bugging, Jamming</li>
+              <li className="hover:text-green-200 transition-colors duration-300">Cracking any ZIP file</li>
+              <li className="hover:text-green-200 transition-colors duration-300">Memory Recovery</li>
+            </ul>
+          </div>
             {/* Payment Info */}
             {registrationOpen && (
               <div className="matrix-card p-6 hover:animate-matrix-glow transition-all duration-500 hover:scale-105">
