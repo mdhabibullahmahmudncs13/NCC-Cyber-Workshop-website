@@ -75,7 +75,7 @@ export function QuickOverview() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 matrix-heading font-mono glitch hover:animate-glow transition-all duration-500 cursor-default" data-text="CURRICULUM.exe">
-              CURRICULUM.exe
+              Instructor_Overview.exe
             </h2>
             <p className="text-xl text-green-400 max-w-3xl mx-auto hover:text-green-300 transition-colors duration-300 font-mono">
               {"> Join us for an intensive one-day cybersecurity workshop designed for beginners and cyber-enthusiasts"}
@@ -174,7 +174,7 @@ export function QuickOverview() {
           <div className="mt-16">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4 matrix-heading font-mono glitch" data-text="WORKSHOP_OVERVIEW.exe">
-                WORKSHOP_OVERVIEW.exe
+               Curriculum.exe
               </h2>
               <p className="text-xl text-green-400 max-w-3xl mx-auto font-mono">
                 {"> A comprehensive training protocol designed to transform you from beginner to cyber-warrior"}
