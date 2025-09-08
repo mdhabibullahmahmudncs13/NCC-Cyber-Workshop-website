@@ -329,29 +329,7 @@ export function QuickOverview() {
       </section>
 
       {/* DETAILS.txt Section */}
-      <section className="py-20 px-4 bg-black relative overflow-hidden">
-        <div className="max-w-4xl mx-auto relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 matrix-heading font-mono glitch hover:animate-glow transition-all duration-500 cursor-default" data-text="-DETAILS.txt">
-              -DETAILS.txt
-            </h2>
-            <p className="text-lg text-green-400 max-w-2xl mx-auto font-mono">
-              {"> Explore hands-on topics covered in the workshop:"}
-            </p>
-          </div>
-          <div className="matrix-card p-8 rounded-2xl">
-            <ul className="list-disc list-inside text-green-300 text-xl space-y-4 font-mono">
-              <li className="hover:text-green-200 transition-colors duration-300">Operating System</li>
-              <li className="hover:text-green-200 transition-colors duration-300">Google Hacking</li>
-              <li className="hover:text-green-200 transition-colors duration-300">Phishing Attack</li>
-              <li className="hover:text-green-200 transition-colors duration-300">WIFI Hacking, Bugging, Jamming</li>
-              <li className="hover:text-green-200 transition-colors duration-300">Cracking any ZIP file</li>
-              <li className="hover:text-green-200 transition-colors duration-300">Memory Recovery</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
+      
     </>
   )
 }
