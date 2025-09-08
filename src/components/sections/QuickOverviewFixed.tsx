@@ -60,7 +60,7 @@ export function QuickOverview() {
               📅
             </div>
             <h3 className="text-lg font-semibold mb-2 matrix-text group-hover:animate-glow transition-colors duration-300 font-mono">[DATE]</h3>
-            <p className="text-green-400 group-hover:text-green-300 transition-colors duration-300 font-mono">January 25, 2025</p>
+            <p className="text-green-400 group-hover:text-green-300 transition-colors duration-300 font-mono">SEPTEMBER 11, 2025</p>
             <p className="text-green-400 text-sm mt-1 group-hover:text-green-300 transition-colors duration-300 font-mono">[SATURDAY]</p>
           </div>
 
@@ -88,7 +88,7 @@ export function QuickOverview() {
               📍
             </div>
             <h3 className="text-lg font-semibold mb-2 matrix-text group-hover:animate-glow transition-colors duration-300 font-mono">[LOCATION]</h3>
-            <p className="text-green-400 group-hover:text-green-300 transition-colors duration-300 font-mono">NCC Campus</p>
+            <p className="text-green-400 group-hover:text-green-300 transition-colors duration-300 font-mono">NITER Campus</p>
             <p className="text-green-400 text-sm mt-1 group-hover:text-green-300 transition-colors duration-300 font-mono">[LAB_ENVIRONMENT]</p>
           </div>
 

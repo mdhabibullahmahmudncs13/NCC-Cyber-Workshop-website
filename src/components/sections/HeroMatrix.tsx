@@ -154,7 +154,7 @@ export function HeroMatrix() {
                   >
                     <MapPin className={`h-6 w-6 text-green-400 mt-1 flex-shrink-0 transition-transform duration-300 ${hoveredCard === 1 ? 'scale-110 animate-bounce' : ''}`} />
                     <div>
-                      <h4 className="font-semibold matrix-text font-mono">AD-117</h4>
+                      <h4 className="font-semibold matrix-text font-mono">AD-217</h4>
                       <p className="text-green-400 text-sm font-mono">Building 2, Niter Campus</p>
                     </div>
                   </div>
