@@ -33,7 +33,7 @@ export function Curriculum() {
       emoji: "🔍",
       color: "from-green-500 to-green-600", 
       description: "Master information gathering and reconnaissance techniques",
-      topics: ["Search Engine Techniques", "Social Media Intelligence", "Data Mining", "Threat Intelligence"],
+      topics: ["Search Engine Techniques", "Social Media Intelligence","Threat Intelligence"],
       difficulty: "Intermediate",
       duration: "75 mins"
     },
