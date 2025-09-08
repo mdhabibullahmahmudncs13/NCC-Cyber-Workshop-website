@@ -71,7 +71,7 @@ export function QuickOverview() {
             onMouseLeave={() => setHoveredCard(null)}
           >
             <div className={`w-20 h-20 bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-400/50 rounded-lg flex items-center justify-center text-green-400 text-2xl font-bold mx-auto mb-4 transition-all duration-500 ${hoveredCard === 1 ? 'animate-spin scale-110' : ''}`}>
-              <img src="https://fra.cloud.appwrite.io/v1/storage/buckets/68bbafbf001e80d92606/files/68bd7156001170fef882/view?project=68bb9d7800190636a8b2&mode=admin" alt="" className="w-20 h-20 object-contain" />
+              <img src="https://fra.cloud.appwrite.io/v1/storage/buckets/68bbafbf001e80d92606/files/68beff82eb382e39a22f/view?project=68bb9d7800190636a8b2&mode=admin" alt="" className="w-20 h-20 object-contain" />
             </div>
             <h3 className="text-lg font-semibold mb-2 matrix-text group-hover:animate-glow transition-colors duration-300 font-mono">[DURATION]</h3>
             <p className="text-green-400 group-hover:text-green-300 transition-colors duration-300 font-mono">9:00 AM - 5:00 PM</p>
