@@ -112,13 +112,7 @@ export function HeroMatrix() {
                 </Link>
                 
                 
-                <button
-                  onClick={() => setPlayVideo(!playVideo)}
-                  className="flex items-center space-x-2 matrix-border matrix-text hover:matrix-bg px-8 py-4 text-lg font-semibold font-mono rounded-lg transition-all duration-300 hover:scale-105 group"
-                >
-                  <Play className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                  <span>[WATCH_PREVIEW.mp4]</span>
-                </button>
+ 
               </div>
             ) : (
               <div className="space-y-4">
