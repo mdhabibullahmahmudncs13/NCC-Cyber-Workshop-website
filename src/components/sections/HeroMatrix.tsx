@@ -120,7 +120,7 @@ export function HeroMatrix() {
                   <Clock className="h-5 w-5" />
                   <span className="text-lg font-semibold">[REGISTRATION_CLOSED]</span>
                 </div>
-                <p className="text-green-400 font-mono">{"> Registration was open from September 6-10, 2025"}</p>
+                <p className="text-green-400 font-mono">{"> Registration open until September 12, 2025. Workshop: September 13, 2025"}</p>
               </div>
             )}
           </div>
@@ -141,7 +141,8 @@ export function HeroMatrix() {
                   >
                     <Calendar className={`h-6 w-6 text-green-400 mt-1 flex-shrink-0 transition-transform duration-300 ${hoveredCard === 0 ? 'scale-110 rotate-12' : ''}`} />
                     <div>
-                      <h4 className="font-semibold matrix-text font-mono">September 11, 2025</h4>
+                      {/* <h4 className="font-semibold matrix-text font-mono">September 13, 2025</h4> */}
+                      <h4 className="font-semibold matrix-text font-mono">Date will be Announced soon...</h4> 
                       <p className="text-green-400 text-sm font-mono">9:00 AM - 6:00 PM</p>
                     </div>
                   </div>
@@ -154,8 +155,8 @@ export function HeroMatrix() {
                   >
                     <MapPin className={`h-6 w-6 text-green-400 mt-1 flex-shrink-0 transition-transform duration-300 ${hoveredCard === 1 ? 'scale-110 animate-bounce' : ''}`} />
                     <div>
-                      <h4 className="font-semibold matrix-text font-mono">AD-217</h4>
-                      <p className="text-green-400 text-sm font-mono">Building-2, Niter Campus</p>
+                      <h4 className="font-semibold matrix-text font-mono">will be Announced soon...</h4>
+                      <p className="text-green-400 text-sm font-mono">will be Announced soon...</p>
                     </div>
                   </div>
                   

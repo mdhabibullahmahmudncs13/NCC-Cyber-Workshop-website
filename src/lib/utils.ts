@@ -150,7 +150,7 @@ export function getStatusColor(status: string) {
 export function isRegistrationOpen() {
   const now = new Date();
   const startDate = new Date('2025-09-06');
-  const endDate = new Date('2025-09-10');
+  const endDate = new Date('2025-09-12'); // Extended to Sep 12 for Sep 13 workshop
   endDate.setHours(23, 59, 59, 999); // End of day
   
   return now >= startDate && now <= endDate;
@@ -158,7 +158,7 @@ export function isRegistrationOpen() {
 
 export function getTimeUntilRegistrationEnd() {
   const now = new Date();
-  const endDate = new Date('2025-09-10');
+  const endDate = new Date('2025-09-12'); // Updated to match new registration end date
   endDate.setHours(23, 59, 59, 999);
   
   const diff = endDate.getTime() - now.getTime();
