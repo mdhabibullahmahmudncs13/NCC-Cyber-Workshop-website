@@ -118,9 +118,9 @@ export function HeroMatrix() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-2 text-red-400 animate-pulse font-mono matrix-border p-3 rounded">
                   <Clock className="h-5 w-5" />
-                  <span className="text-lg font-semibold">[REGISTRATION_CLOSED]</span>
+                  <span className="text-lg font-semibold">[REGISTRATION_POSTPONED]</span>
                 </div>
-                <p className="text-green-400 font-mono">{"> Registration open until September 12, 2025. Workshop: September 13, 2025"}</p>
+                {/* <p className="text-green-400 font-mono">{"> Registration open until September 12, 2025. Workshop: September 13, 2025"}</p> */}
               </div>
             )}
           </div>
